@@ -2,3 +2,26 @@
     <title>Motter</title>
 </head>
 
+<template name="mainLayout">
+
+    <body onunload="" class="page-subpage page-about-us navigation-top-header" id="page-top">
+
+    <div id="outer-wrapper">
+        <!-- Inner Wrapper -->
+        <div id="inner-wrapper">
+            <!-- Navigation-->
+            {{> header}}
+            <!-- end Navigation-->
+            {{> yield}}
+
+            {{> footer}}
+        </div>
+        <!-- end Inner Wrapper -->
+    </div>
+
+
+
+    </body>
+
+</template>
+
