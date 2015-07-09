@@ -8,3 +8,4 @@ Router.route('/real', function () {
     this.layout('mainLayout');
     this.render('realEstate');
 });
+

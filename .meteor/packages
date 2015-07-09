@@ -12,3 +12,10 @@ jquery
 fortawesome:fontawesome
 less
 iron:router
+bevanhunt:leaflet
+linto:jquery-ui
+rcy:nouislider
+dburles:google-maps
+dburles:packery
+mmuric:richmarker
+grigio:babel
