@@ -1,1 +1,1 @@
-This is MilanoAffitti
+Meteor port of Spotter.
