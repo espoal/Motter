@@ -5,17 +5,15 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
-nemo64:bootstrap
-jquery
-fortawesome:fontawesome
-less
-iron:router
-bevanhunt:leaflet
-linto:jquery-ui
-rcy:nouislider
-dburles:google-maps
-dburles:packery
-mmuric:richmarker
 grigio:babel
+nemo64:bootstrap
+less
+fortawesome:fontawesome
+kadira:flow-router
+kadira:blaze-layout
+dburles:google-maps
+strikeout:slick
+spiderable
+tomwasd:flow-router-seo
+arillo:flow-router-helpers
+audit-argument-checks

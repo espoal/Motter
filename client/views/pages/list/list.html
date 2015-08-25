@@ -1,0 +1,75 @@
+<template name="list">
+
+    <!-- Page Canvas-->
+    <div id="page-canvas">
+        
+        <!--Sub Header-->
+        <section class="sub-header">
+            <div class="search-bar horizontal collapse" id="redefine-search-form"></div>
+            <!-- /.search-bar -->
+            <div class="breadcrumb-wrapper">
+                <div class="container">
+                    <div class="redefine-search">
+                        <a href="#redefine-search-form" class="inner" data-toggle="collapse" aria-expanded="false" aria-controls="redefine-search-form">
+                            <span class="icon"></span>
+                            <span>Redefine Search</span>
+                        </a>
+                    </div>
+                    <ol class="breadcrumb">
+                        <li><a href="index-directory.html"><i class="fa fa-home"></i></a></li>
+                        <li><a href="#">Page</a></li>
+                        <li class="active">Detail</li>
+                    </ol>
+                    <!-- /.breadcrumb-->
+                </div>
+                <!-- /.container-->
+            </div>
+            <!-- /.breadcrumb-wrapper-->
+        </section>
+        <!--end Sub Header-->
+
+        <!--Page Content-->
+        <div id="page-content">
+            <section class="container">
+                <div class="">
+                    <!--Content-->
+                    <div class="">
+                        <header>
+                            <h1 class="page-title">Listing</h1>
+                        </header>
+                        <figure class="filter clearfix">
+                            <div class="buttons pull-left">
+                                <a href="listing-grid.html" class="btn icon active"><i class="fa fa-th"></i>Grid</a>
+                                <a href="listing-list.html" class="btn icon"><i class="fa fa-th-list"></i>List</a>
+                            </div>
+                        </figure>
+
+                        <!--Listing Grid-->
+                        <section class="block equal-height">
+                            <div class="row">
+
+                                {{#if Template.subscriptionsReady}}
+                                    <!-- This is displayed when all data is ready. -->
+                                    {{#each locations}}
+                                        {{> gridItem}}
+                                        {{id}}
+                                    {{/each}}
+                                {{else}}
+                                    Loading...
+                                {{/if}}
+
+                            </div>
+                            <!--/.row-->
+                        </section>
+                        <!--end Listing Grid-->
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+        <!-- end Page Content-->
+    </div>
+    <!-- end Page Canvas-->
+
+</template>

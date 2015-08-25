@@ -1,0 +1,43 @@
+<template name="gridItem">
+
+    <div class="col-md-3 col-sm-4">
+        <div class="item">
+            <div class="image">
+                <div class="quick-view"><i class="fa fa-eye"></i><span>Quick View</span></div>
+                <a href="{{pathFor '/rentals/:rentId' rentId=id}}">
+                    <div class="overlay">
+                        <div class="inner">
+                            <div class="content">
+                                <h4>Description</h4>
+                                <p>{{description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item-specific">
+                        <span title="Bedrooms"><img src="/images/bedrooms.png" alt="">2</span>
+                        <span title="Bathrooms"><img src="/images/bathrooms.png" alt="">2</span>
+                        <span title="Area"><img src="/images/area.png" alt="">240m<sup>2</sup></span>
+                        <span title="Garages"><img src="/images/garages.png" alt="">1</span>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-thumbs-up"></i>
+                    </div>
+                    <img src="/images/items/1.jpg" alt="">
+                </a>
+            </div>
+            <div class="wrapper">
+                <a href="item-detail.html"><h3>Steak House Restaurant</h3></a>
+                <figure>63 Birch Street</figure>
+                <div class="info">
+                    <div class="type">
+                        <i><img src="/icons/restaurants-bars/restaurants/restaurant.png" alt=""></i>
+                        <span>Restaurant</span>
+                    </div>
+                    <div class="rating" data-rating="4"></div>
+                </div>
+            </div>
+        </div>
+        <!-- /.item-->
+    </div>
+
+</template>

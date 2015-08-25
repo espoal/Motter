@@ -3,7 +3,6 @@
     "normalize"            : true,
     "print"                : true,
     "glyphicons"           : true,
-
     "scaffolding"          : true,
     "type"                 : true,
     "code"                 : true,
@@ -49,6 +48,6 @@
     "transition"           : true,
 
     "utilities"            : true,
-    "responsive-utilities" : false
+    "responsive-utilities" : true
   }
 }

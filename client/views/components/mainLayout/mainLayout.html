@@ -1,10 +1,10 @@
 <head>
     <title>Motter</title>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 </head>
 
 <template name="mainLayout">
 
-    <body onunload="" class="page-subpage page-about-us navigation-top-header" id="page-top">
 
     <div id="outer-wrapper">
         <!-- Inner Wrapper -->
@@ -12,7 +12,7 @@
             <!-- Navigation-->
             {{> header}}
             <!-- end Navigation-->
-            {{> yield}}
+            {{>Template.dynamic template=content}}
 
             {{> footer}}
         </div>
@@ -21,7 +21,5 @@
 
 
 
-    </body>
 
 </template>
-

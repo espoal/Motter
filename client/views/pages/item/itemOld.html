@@ -1,0 +1,261 @@
+<template name="itemOld">
+
+    {{#if Template.subscriptionsReady}}
+        <!-- This is displayed when all data is ready. -->
+        {{#with rental}}
+            <div class="page-subpage page-item-detail navigation-off-canvas" id="page-top">
+
+                <!-- Page Canvas-->
+                <div id="page-canvas">
+                    <!--Off Canvas Navigation-->
+                    <nav class="off-canvas-navigation">
+                        <header>Navigation</header>
+                        <div class="main-navigation navigation-off-canvas"></div>
+                    </nav>
+                    <!--end Off Canvas Navigation-->
+                    <!--Sub Header-->
+                    <section class="sub-header">
+                        <div class="search-bar horizontal collapse" id="redefine-search-form"></div>
+                        <!-- /.search-bar -->
+                        <div class="breadcrumb-wrapper">
+                            <div class="container">
+                                <div class="redefine-search">
+                                    <a href="#redefine-search-form" class="inner" data-toggle="collapse" aria-expanded="false" aria-controls="redefine-search-form">
+                                        <span class="icon"></span>
+                                        <span>Redefine Search</span>
+                                    </a>
+                                </div>
+                                <ol class="breadcrumb">
+                                    <li><a href="index-directory.html"><i class="fa fa-home"></i></a></li>
+                                    <li><a href="#">Page</a></li>
+                                    <li class="active">Detail</li>
+                                </ol>
+                                <!-- /.breadcrumb-->
+                            </div>
+                            <!-- /.container-->
+                        </div>
+                        <!-- /.breadcrumb-wrapper-->
+                    </section>
+                    <!--end Sub Header-->
+
+                    <!--Page Content-->
+                    <div id="page-content">
+
+                        <div id="map-detail">
+                            {{> googleMap name="itemMap" options=itemMapOptions}}
+                        </div>
+                        <section class="container">
+                            <div class="row">
+                                <!--Item Detail Content-->
+                                <div class="col-md-9">
+                                    <section class="block" id="main-content">
+                                        <header class="page-title">
+                                            <div class="title">
+                                                <h1>{{title}}</h1>
+                                                <figure>{{location}}</figure>
+                                            </div>
+                                            <div class="info">
+                                                <div class="type">
+                                                    <i><img src={{type_icon}} alt=""></i>
+                                                    <span>{{type}}</span>
+                                                </div>
+                                            </div>
+                                        </header>
+                                        <div class="row">
+                                            <!--Detail Sidebar-->
+                                            <aside class="col-md-4 col-sm-4" id="detail-sidebar">
+                                                <!--Contact-->
+                                                <section>
+                                                    <header><h3>Contact</h3></header>
+                                                    <address>
+                                                        <div>Max Five Lounge</div>
+                                                        <div>63 Birch Street</div>
+                                                        <div>Granada Hills, CA 91344</div>
+                                                        <figure>
+                                                            <div class="info">
+                                                                <i class="fa fa-phone"></i>
+                                                                <span>+1 123 456 789</span>
+                                                            </div>
+                                                            <div class="info">
+                                                                <i class="fa fa-globe"></i>
+                                                                <a href="#">title is: {{title}}</a>
+                                                            </div>
+                                                        </figure>
+                                                    </address>
+                                                </section>
+                                                <!--end Contact-->
+
+                                                <!--Contact Form-->
+                                                <section>
+                                                    <header><h3>Contact Form</h3></header>
+                                                    <figure>
+                                                        <form id="item-detail-form" role="form" method="post" action="?">
+                                                            <div class="form-group">
+                                                                <label for="item-detail-name">Name</label>
+                                                                <input type="text" class="form-control framed" id="item-detail-name" name="item-detail-name" required="">
+                                                            </div>
+                                                            <!-- /.form-group -->
+                                                            <div class="form-group">
+                                                                <label for="item-detail-email">Email</label>
+                                                                <input type="email" class="form-control framed" id="item-detail-email" name="item-detail-email" required="">
+                                                            </div>
+                                                            <!-- /.form-group -->
+                                                            <div class="form-group">
+                                                                <label for="item-detail-message">Message</label>
+                                                                <textarea class="form-control framed" id="item-detail-message" name="item-detail-message"  rows="3" required=""></textarea>
+                                                            </div>
+                                                            <!-- /.form-group -->
+                                                            <div class="form-group">
+                                                                <button type="submit" class="btn framed icon">Send<i class="fa fa-angle-right"></i></button>
+                                                            </div>
+                                                            <!-- /.form-group -->
+                                                        </form>
+                                                    </figure>
+                                                </section>
+                                                <!--end Contact Form-->
+                                            </aside>
+                                            <!--end Detail Sidebar-->
+                                            <!--Content-->
+                                            <div class="col-md-8 col-sm-8">
+                                                <section>
+
+                                                    <article class="item-gallery">
+
+                                                        <div class="slider-for">
+                                                            {{#each gallery}}
+                                                                <div class="item"><img src={{this}} alt=""></div>
+                                                            {{/each}}
+                                                        </div>
+
+                                                        <div class="slider-nav">
+                                                            {{#each gallery}}
+                                                                <div class="item"><img src={{this}} alt=""></div>
+                                                            {{/each}}
+                                                        </div>
+
+                                                    </article>
+                                                    <!-- /.item-gallery -->
+                                                    <article class="block">
+                                                        {{#if Template.subscriptionsReady}}
+                                                            {{#with rental}}
+                                                                <h1>Name: {{title}}</h1>
+                                                            {{/with}}
+                                                        {{else}}
+                                                            <p>Loading...</p>
+                                                        {{/if}}
+                                                        <header><h2>Description</h2></header>
+                                                        <p>
+                                                            {{description}}
+                                                        </p>
+                                                    </article>
+                                                    <article class="block">
+                                                        <header><h2>Features</h2></header>
+                                                        <ul class="bullets">
+                                                            {{#each features}}
+                                                                <li>{{this}}</li>
+                                                            {{/each}}
+                                                        </ul>
+                                                    </article>
+
+                                                </section>
+
+                                            </div>
+                                            <!-- /.col-md-8-->
+                                        </div>
+                                        <!-- /.row -->
+                                    </section>
+                                    <!-- /#main-content-->
+                                </div>
+                                <!-- /.col-md-8-->
+                                <!--Sidebar-->
+                                <div class="col-md-3">
+                                    <aside id="sidebar">
+
+                                        <section>
+                                            <a href="#"><img src="/images/ad-banner-sidebar.png" alt=""></a>
+                                        </section>
+
+                                        <section>
+                                            <header><h2>Nearby Bus Lines</h2></header>
+                                            <ul class="bullets">
+                                                <li><a href="#" >61</a> 100 m</li>
+                                                <li><a href="#" >61</a> 100 m</li>
+                                                <li><a href="#" >61</a> 100 m</li>
+                                                <li><a href="#" >61</a> 100 m</li>
+
+
+                                            </ul>
+                                        </section>
+
+                                        <section>
+                                            <header><h2>Nearby Places</h2></header>
+                                            <a href="item-detail.html" class="item-horizontal small">
+                                                <h3>Cash Cow Restaurante</h3>
+                                                <figure>63 Birch Street</figure>
+                                                <div class="wrapper">
+                                                    <div class="image"><img src="/images/items/1.jpg" alt=""></div>
+                                                    <div class="info">
+                                                        <div class="type">
+                                                            <i><img src="/icons/restaurants-bars/restaurants/restaurant.png" alt=""></i>
+                                                            <span>Restaurant</span>
+                                                        </div>
+                                                        <div class="rating" data-rating="4"></div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!--/.item-horizontal small-->
+                                            <a href="item-detail.html" class="item-horizontal small">
+                                                <h3>Blue Chilli</h3>
+                                                <figure>2476 Whispering Pines Circle</figure>
+                                                <div class="wrapper">
+                                                    <div class="image"><img src="/images/items/2.jpg" alt=""></div>
+                                                    <div class="info">
+                                                        <div class="type">
+                                                            <i><img src="/icons/restaurants-bars/restaurants/restaurant.png" alt=""></i>
+                                                            <span>Restaurant</span>
+                                                        </div>
+                                                        <div class="rating" data-rating="3"></div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!--/.item-horizontal small-->
+                                            <a href="item-detail.html" class="item-horizontal small">
+                                                <h3>Eddie’s Fast Food</h3>
+                                                <figure>4365 Bruce Street</figure>
+                                                <div class="wrapper">
+                                                    <div class="image"><img src="/images/items/3.jpg" alt=""></div>
+                                                    <div class="info">
+                                                        <div class="type">
+                                                            <i><img src="/icons/restaurants-bars/restaurants/restaurant.png" alt=""></i>
+                                                            <span>Restaurant</span>
+                                                        </div>
+                                                        <div class="rating" data-rating="5"></div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <!--/.item-horizontal small-->
+                                        </section>
+
+
+                                    </aside>
+                                    <!-- /#sidebar-->
+                                </div>
+                                <!-- /.col-md-3-->
+                                <!--end Sidebar-->
+                            </div><!-- /.row-->
+                        </section>
+                        <!-- /.container-->
+                    </div>
+                    <!-- end Page Content-->
+                </div>
+                <!-- end Page Canvas-->
+
+            </div>
+        {{/with}}
+    {{else}}
+        Loading...
+    {{/if}}
+
+
+    
+</template>
